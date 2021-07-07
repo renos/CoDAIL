@@ -11,6 +11,7 @@ from rl.common import set_global_seeds
 from rl.common.vec_env.subproc_vec_env import SubprocVecEnv
 from sandbox.mack.acktr_disc import learn
 from sandbox.mack.policies import CategoricalPolicy
+import tensorflow as tf
 tf.enable_eager_execution()
 
 
