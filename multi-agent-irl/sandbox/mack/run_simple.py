@@ -11,6 +11,8 @@ from rl.common import set_global_seeds
 from rl.common.vec_env.subproc_vec_env import SubprocVecEnv
 from sandbox.mack.acktr_disc import learn
 from sandbox.mack.policies import CategoricalPolicy
+tf.enable_eager_execution()
+
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
