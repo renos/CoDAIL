@@ -152,7 +152,7 @@ def render(env, algo, seed, image, vis_dis, hyper_study, epoch, sample, num_traj
 
                 all_pos = [[] for k in range(n_agents)]
                 for i in range(num_trajs):
-                    print(f"trajectory {i}")
+                    print("trajectory ", i)
                     all_ob, all_agent_ob, all_ac, all_rew, ep_ret = [], [], [], [], [0 for k in range(n_agents)]
                     for k in range(n_agents):
                         all_ob.append([])
