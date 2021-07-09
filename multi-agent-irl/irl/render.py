@@ -130,6 +130,7 @@ def render(env, algo, seed, image, vis_dis, hyper_study, epoch, sample, num_traj
                     nstack=1, ent_coef=0.01, vf_coef=0.5, vf_fisher_coef=1.0, lr=0.01, max_grad_norm=0.5, kfac_clip=0.001,
                     lrschedule='linear', identical=make_env.get_identical(env_id), use_kfac=False)
                 if algo in ['mack_om', 'codail']:
+                    print("here for some reason")
                     make_model = lambda: Model_om(
                         CategoricalPolicy_om, oppo_CategoricalPolicy, ob_space, ac_space, 1, total_timesteps=1e7, nprocs=2, nsteps=500,
                         nstack=1, ent_coef=0.01, vf_coef=0.5, vf_fisher_coef=1.0, lr=0.01, max_grad_norm=0.5, kfac_clip=0.001,
