@@ -40,18 +40,18 @@ class Model(object):
 
         print(pointer)
 
-        #A, ADV, R, PG_LR = [], [], [], []
-        #for k in range(num_agents):
-        #    if identical[k]:
-        #        A.append(A[-1])
-        #        ADV.append(ADV[-1])
-        #        R.append(R[-1])
-        #        PG_LR.append(PG_LR[-1])
-        #    else:
-        #        A.append(tf.placeholder(tf.int32, [nbatch * scale[k]]))
-        #        ADV.append(tf.placeholder(tf.float32, [nbatch * scale[k]]))
-        #        R.append(tf.placeholder(tf.float32, [nbatch * scale[k]]))
-        #        PG_LR.append(tf.placeholder(tf.float32, []))
+        A, ADV, R, PG_LR = [], [], [], []
+        for k in range(num_agents):
+            if identical[k]:
+                A.append(A[-1])
+                ADV.append(ADV[-1])
+                R.append(R[-1])
+                PG_LR.append(PG_LR[-1])
+            else:
+                A.append(tf.placeholder(tf.int32, [nbatch * scale[k]]))
+                ADV.append(tf.placeholder(tf.float32, [nbatch * scale[k]]))
+                R.append(tf.placeholder(tf.float32, [nbatch * scale[k]]))
+                PG_LR.append(tf.placeholder(tf.float32, []))
 
         # A = [tf.placeholder(tf.int32, [nbatch]) for _ in range(num_agents)]
         # ADV = [tf.placeholder(tf.float32, [nbatch]) for _ in range(num_agents)]
