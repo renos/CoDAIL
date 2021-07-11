@@ -250,7 +250,7 @@ def render(env, algo, seed, image, vis_dis, hyper_study, epoch, sample, num_traj
                     pkl.dump(sample_trajs, open(path + '-%dtra-%d.pkl' % (num_trajs,seed), 'wb'))
                 if image:
                     print(images.shape)
-                    # imageio.mimsave(path + '.mp4', images, fps=25)
+                    imageio.mimsave(path + '.mp4', images, fps=25)
                 if vis_dis or kl:
                     pos = np.concatenate([all_pos[k] for k in range(n_agents) if env.world.agents[k].movable])
                     print("There are %d points in total" % len(pos))
