@@ -11,8 +11,8 @@ import numpy as np
 from gym import spaces
 from gym.utils import colorize, seeding
 from six.moves import xrange
-import Box2D
-from Box2D.b2 import circleShape, contactListener, edgeShape, fixtureDef, polygonShape, revoluteJointDef
+#import Box2D
+#from Box2D.b2 import circleShape, contactListener, edgeShape, fixtureDef, polygonShape, revoluteJointDef
 
 
 MAX_AGENTS = 40
@@ -482,10 +482,10 @@ def _discount_sum(x, discount):
 
 
 
-class ContactDetector(contactListener):
+class ContactDetector(Agent):
 
     def __init__(self, env):
-        contactListener.__init__(self)
+        Agent.__init__(self)
         self.env = env
 
     def BeginContact(self, contact):
