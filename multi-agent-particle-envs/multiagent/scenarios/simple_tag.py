@@ -135,11 +135,22 @@ class Scenario(BaseScenario):
         other_pos = []
         other_vel = []
         for other in world.agents:
+            #print(other)
             if other is agent: continue
             comm.append(other.state.c)
             other_pos.append(other.state.p_pos - agent.state.p_pos)
             if not other.adversary:
+                #print(other.adversary)
                 other_vel.append(other.state.p_vel)
+        #print("simple tag observation")
+        #print(agent.state.p_vel)
+        #print("agent state p_pos")
+        #print(agent.state.p_pos)
+        #print("entity pos")
+        #print(entity_pos)
+        #print("other pos")
+        #print(other_pos)
+        #print(other_vel)
         return np.concatenate([agent.state.p_vel] + [agent.state.p_pos] + entity_pos + other_pos + other_vel)
 
     def done(self, agent, world):
