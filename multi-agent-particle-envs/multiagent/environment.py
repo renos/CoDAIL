@@ -254,8 +254,8 @@ class MultiAgentEnv(gym.Env):
                 pos = np.zeros(self.world.dim_p)
             else:
                 pos = self.agents[i].state.p_pos
-                print("adsdfasdf")
-                print(pos)
+            print("adsdfasdf")
+            print(pos)
             self.viewers[i].set_bounds(pos[0]-cam_range,pos[0]+cam_range,pos[1]-cam_range,pos[1]+cam_range)
             # update geometry positions
             for e, entity in enumerate(self.world.entities):
