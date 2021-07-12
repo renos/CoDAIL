@@ -219,7 +219,7 @@ class MultiAgentEnv(gym.Env):
                 # import rendering only if we need it (and don't import for headless machines)
                 #from gym.envs.classic_control import rendering
                 from multiagent import rendering
-                self.viewers[i] = rendering.Viewer(1000,1000)
+                self.viewers[i] = rendering.Viewer(2000,2000)
 
         # create rendering geometry
         if self.render_geoms is None:
