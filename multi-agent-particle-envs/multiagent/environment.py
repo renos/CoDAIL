@@ -219,7 +219,7 @@ class MultiAgentEnv(gym.Env):
                 # import rendering only if we need it (and don't import for headless machines)
                 #from gym.envs.classic_control import rendering
                 from multiagent import rendering
-                self.viewers[i] = rendering.Viewer(500,500)
+                self.viewers[i] = rendering.Viewer(700,700)
 
         # create rendering geometry
         if self.render_geoms is None:
@@ -249,7 +249,7 @@ class MultiAgentEnv(gym.Env):
         for i in range(len(self.viewers)):
             from multiagent import rendering
             # update bounds to center around agent
-            cam_range = 1
+            cam_range = 1.5
             if self.shared_viewer:
                 pos = np.zeros(self.world.dim_p)
             else:
