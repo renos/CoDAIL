@@ -64,7 +64,7 @@ def main(logdir, env, lr, seed, batch_size, load, epoch):
 
     for env_id, seed, lr, batch_size in itertools.product(env_ids, seeds, lrs, batch_sizes):
         train(logdir + '/mack/' + env_id + '/l-{}-b-{}/seed-{}'.format(lr, batch_size, seed),
-              env_id, 5e7, lr, batch_size, seed, batch_size // 250, load, epoch, path)
+              env_id, 5e7, lr, batch_size, seed, batch_size // 50, load, epoch, path)
 
 
 if __name__ == "__main__":
