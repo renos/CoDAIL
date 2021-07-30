@@ -43,6 +43,10 @@ class CategoricalPolicy(object):
             return log_prob.reshape([-1, 1])
 
         def step(ob, obs, a_v, *_args, **_kwargs):
+            ob_mean = np.mean(ob,axis=0)
+            obx = ob - ob_mean
+            sig = (1.0 / 1000.0 ) * np.transpose(obx).dot(obx)
+            print(np.linalg.det(sig))
             if a_v is not None:
                 a, v = sess.run([a0, v0], {X: ob, X_v: obs, A_v: a_v})
             else:
